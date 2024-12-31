@@ -91,6 +91,7 @@ button,
     width: 376px;
     margin:auto;
     padding: 5px;
+    align-self: center;
 }
 
 .subContainer1{
