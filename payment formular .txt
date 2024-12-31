@@ -1,0 +1,15 @@
+***Repayments***
+
+M= P*((r(1+r)^n) / (((1+r)^n)-1)).
+
+M= monthly repayment
+P=Loan Amount(mortgage Amount)
+r = monthly interest rate.
+n = total number of payments
+
+r = interest rate(in decimal i.e divided by 100) * 12(months in a year).
+
+n = years * 12(months in a year).
+
+*** interest only***
+M = P*r.

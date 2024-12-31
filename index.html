@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Repayment Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mainContainer">
+      <div class="subContainer1">
+        <div class="clearAll">
+          <h3>Mortgage Calculator</h3>
+          <a href="#" id="clearAll" onclick="clearAllInput()">Clear All</a>
+        </div>
+        <br>
+        <br>
+        <label for="inputBox1">Mortgage Amount</label>
+
+        <div class="commonValue textBox" id="textBox1">
+          <p id="pound"> &pound;</p> <input type="text" id="inputBox1" class=" textEntry" oninput="formatNumber(this)">
+        </div>
+        <p id="inputBox1Error" class="error errorColor">This field is required</p>
+
+        <!-- responsive design for mortgage terms -->
+        <div class="mortgageTerms">
+         <div class="term1">
+          <label for="inputBox2">Mortgage Term</label>
+
+          <div class="commonValue textBox" id="textBox2">
+            <input type="text" id="inputBox2" class=" textEntry" oninput="validInput(this)"> <p class="years" id="years">years </p>
+          </div>
+          <p id="inputBox2Error" class="error errorColor">This field is required</p>
+         </div>
+
+         <div class="term2">
+          <label for="inputBox3">Interest Rate</label>
+
+        <div class="commonValue textBox" id="textBox3">
+          <input type="text" id="inputBox3" class=" textEntry" oninput="validInput(this)"><p class="percent" id="percent">%</p>
+        </div>
+        <p id="inputBox3Error" class="error errorColor">This field is required</p>
+        </div>
+         </div>
+
+        <div class="commonValue mortgageType">
+          <label for="mortgageBox1">Mortgage Type</label>
+
+          <div id="Mortgage">
+            <input type="radio" name="Mortgage"  option="1" style="margin-right:15px;" id="mortgageBox1">Repayment
+          </div>
+          
+          <div id="Mortgage">
+            <input type="radio" name="Mortgage"  option="2"  style="margin-right:15px;" id="mortgageBox2">Interest Only
+          </div >
+        </div>
+        <p id="inputBox4Error" class="error errorColor">This field is required</p>
+
+        <button onclick="submitButton()"><img src="assets/images/icon-calculator.svg" alt="" style="margin-right: 7px;">Calculate Repayments</button>
+      </div>
+      
+      <div class="subContainer2">
+         <div class="emptyState" id="outputHidden">
+           <img src="assets/images/illustration-empty.svg" alt="">
+           <h3>Results shown here</h3>
+           <p> 
+                 Complete the form and click “calculate repayments” to see what your monthly repayments would be.
+           </p>
+         </div>
+
+         <div class="completedState  error" id="outputShown">
+          <h3>Your results</h3>
+          <p>
+            Your results are shown below based on the information you provided. 
+            To adjust the results, edit the form and click “calculate repayments” again.
+          </p>
+          <div class="amountDisplayed">
+            <p>Your monthly repayments</p>
+            <div class="amountStyles">
+              <h1 style="color: hsl(61, 70%, 52%);"> &pound;</h1><h1 id="monthlyRepay"style="color: hsl(61, 70%, 52%);"></h1>
+            </div>
+            <hr>
+            <p>Total you'll repay over the term</p>
+             <div class="amountStyles">
+              <h4>&pound;</h4><h4 id="totalRepay"></h4>
+             </div>
+          </div>
+         </div>
+      </div>
+    </div>
+     
+</body>
+<script src="script.js"></script>
+</html>

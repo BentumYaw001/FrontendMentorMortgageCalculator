@@ -1,0 +1,43 @@
+
+   
+    // if(!isNaN(rawValue) && rawValue !==""){
+    //     inputBox1.value = parseFloat(rawValue).toLocaleString("en-US",{
+    //        minimumFractionDigits:2,maximumFractionDigits:2});
+    // }
+
+    // else{
+    //     inputBox1.value="";
+    // }
+
+     let rawValue = inputBox1.value.replace(/,/g,"");
+
+    if (/^\d*\.?\d*$/.test(rawValue)){
+        let [integer,decimal]= rawValue.split(".");
+
+        integer = integer ? parseInt(integer,10).toLocaleString("en-US"):"";
+        decimal.value = parseFloat(decimal).toLocaleString("en-US",{
+            minimumFractionDigits:2
+        });
+
+        inputBox1.value = decimal !== undefined ?`${integer}.${decimal}`:integer;
+    }
+
+    else{
+        inputBox1.value.slice(0,-1);
+    }
+
+
+
+
+
+
+    function  getNumericeValue(){
+    const rawValue =inputBox1.value.replace(/,/g,"");
+    return parseFloat(rawValue)||0;
+}
+
+inputBox1=getNumericeValue();
+
+
+ updating the input value.
+    inputBox1.value = formatAsMoney(numericValue);
