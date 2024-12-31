@@ -89,7 +89,7 @@ button,
 
 .mainContainer{
     width: 376px;
-    margin:auto;
+    margin-left:50px;
     padding: 5px;
     align-self: center;
 }
